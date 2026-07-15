@@ -431,12 +431,12 @@ export default function App() {
               { n: 8, t: "Lista de Perguntas", d: "Relação estratégica de perguntas vitais para você fazer ao seu advogado nas reuniões.", img: "https://i.postimg.cc/RFbpcW2N/Bonus-08-Mockup-Photoroom.webp" },
               { n: 9, t: "Guia de Revisão Final", d: "Roteiro super rápido para revisar os principais pontos da sua preparação pouco antes da audiência.", img: "https://i.postimg.cc/qRZD8NWn/Bonus-09-Mockup-Photoroom.webp" }
             ].map((bonus, idx) => (
-              <div key={idx} className="bg-slate-800 rounded-2xl p-8 border border-slate-700 relative hover:-translate-y-2 transition-transform duration-300 flex flex-col">
-                <div className="absolute -top-4 right-8 bg-amber-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full">BÔNUS #{bonus.n}</div>
-                <div className="w-full h-48 bg-gradient-to-br from-slate-900/80 to-slate-950/80 rounded-xl mb-6 flex items-center justify-center border border-slate-700/50 shadow-[inset_0_2px_10px_rgba(0,0,0,0.4)] relative">
+              <div key={idx} className="bg-slate-800 rounded-2xl px-6 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14 border border-slate-700 relative hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <div className="absolute -top-4 right-6 sm:right-8 bg-amber-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full z-20">BÔNUS #{bonus.n}</div>
+                <div className="w-full h-40 sm:h-48 bg-gradient-to-br from-slate-900/80 to-slate-950/80 rounded-xl mb-10 flex items-center justify-center border border-slate-700/50 shadow-[inset_0_2px_10px_rgba(0,0,0,0.4)] relative">
                   <div className="absolute inset-0 bg-amber-500/5 blur-3xl rounded-full"></div>
                   {bonus.img ? (
-                    <img src={bonus.img} alt={bonus.t} className="w-full h-full object-contain relative z-10 scale-[1.25] drop-shadow-2xl" />
+                    <img src={bonus.img} alt={bonus.t} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] max-w-none object-contain z-10 drop-shadow-2xl" />
                   ) : (
                     <span className="text-slate-500 text-sm font-medium">Espaço para Mockup</span>
                   )}
@@ -485,7 +485,7 @@ export default function App() {
             <p className="text-lg text-slate-600">Ambas garantem acesso imediato, porém apenas o VIP entrega a preparação completa (10 Passos + 9 Bônus).</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-8 items-stretch">
             
             {/* Basic Offer */}
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200 flex flex-col relative transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
@@ -495,8 +495,8 @@ export default function App() {
               
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Básica */}
-                <div className="w-full h-64 md:h-56 bg-slate-100 rounded-xl mb-6 flex items-center justify-center border border-slate-200 overflow-visible relative">
-                  <img src="https://i.postimg.cc/FKkgSfrn/Mockup-Plano-Basico-squoosh.webp" alt="Kit Estratégico Básico" className="w-full h-full object-contain relative z-10 scale-110 md:scale-100" />
+                <div className="w-full h-80 md:h-64 bg-slate-100 rounded-xl mb-8 flex items-center justify-center border border-slate-200 relative p-4">
+                  <img src="https://i.postimg.cc/FKkgSfrn/Mockup-Plano-Basico-squoosh.webp" alt="Kit Estratégico Básico" className="w-full h-full object-contain relative z-10" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Apenas os 10 Passos</h3>
@@ -543,7 +543,7 @@ export default function App() {
             </div>
 
             {/* Complete Offer */}
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-500 flex flex-col relative transform scale-105 z-10">
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-500 flex flex-col relative transform lg:scale-105 z-10">
               <div className="absolute -right-12 top-6 bg-red-600 text-white font-bold py-1 px-12 transform rotate-45 text-xs tracking-wider shadow-md">
                 RECOMENDADO
               </div>
@@ -553,8 +553,8 @@ export default function App() {
               
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Completa (Produto + Bônus) */}
-                <div className="w-full h-64 md:h-56 bg-amber-50/50 rounded-xl mb-6 flex items-center justify-center border border-amber-100 overflow-visible relative">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-110 md:scale-100" />
+                <div className="w-full h-96 sm:h-80 md:h-72 bg-amber-50/50 rounded-xl mb-8 flex items-center justify-center border border-amber-100 relative p-4">
+                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Kit Estratégico Completo</h3>
