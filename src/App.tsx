@@ -485,7 +485,7 @@ export default function App() {
             <p className="text-lg text-slate-600">Ambas garantem acesso imediato, porém apenas o VIP entrega a preparação completa (10 Passos + 9 Bônus).</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-8 items-stretch">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-10 items-stretch mt-8">
             
             {/* Basic Offer */}
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200 flex flex-col relative transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
@@ -495,8 +495,8 @@ export default function App() {
               
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Básica */}
-                <div className="w-full h-80 md:h-64 bg-slate-100 rounded-xl mb-8 flex items-center justify-center border border-slate-200 relative p-4">
-                  <img src="https://i.postimg.cc/FKkgSfrn/Mockup-Plano-Basico-squoosh.webp" alt="Kit Estratégico Básico" className="w-full h-full object-contain relative z-10" />
+                <div className="w-full h-80 md:h-64 my-6 flex items-center justify-center relative">
+                  <img src="https://i.postimg.cc/FKkgSfrn/Mockup-Plano-Basico-squoosh.webp" alt="Kit Estratégico Básico" className="w-full h-full object-contain relative z-10 scale-[1.15] md:scale-110" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Apenas os 10 Passos</h3>
@@ -543,7 +543,7 @@ export default function App() {
             </div>
 
             {/* Complete Offer */}
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-500 flex flex-col relative transform lg:scale-105 z-10">
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-500 flex flex-col relative transform lg:scale-105 z-10 mt-8 md:mt-0">
               <div className="absolute -right-12 top-6 bg-red-600 text-white font-bold py-1 px-12 transform rotate-45 text-xs tracking-wider shadow-md">
                 RECOMENDADO
               </div>
@@ -553,8 +553,8 @@ export default function App() {
               
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Completa (Produto + Bônus) */}
-                <div className="w-full h-96 sm:h-80 md:h-72 bg-amber-50/50 rounded-xl mb-8 flex items-center justify-center border border-amber-100 relative p-4">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl" />
+                <div className="w-full h-[450px] sm:h-96 md:h-80 my-8 md:my-6 flex items-center justify-center relative">
+                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.25] sm:scale-110 md:scale-110" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Kit Estratégico Completo</h3>
