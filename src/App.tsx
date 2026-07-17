@@ -17,9 +17,10 @@ import {
   Target
 } from 'lucide-react';
 
-const AutoCarousel = lazy(() => import("./components/AutoCarousel"));
 const OfferSection = lazy(() => import("./components/OfferSection"));
 const FAQSection = lazy(() => import("./components/FAQSection"));
+const AutoCarousel = lazy(() => import("./components/AutoCarousel"));
+
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-amber-500 selection:text-white">
@@ -27,335 +28,183 @@ export default function App() {
       {/* Top Bar - Scarcity */}
       <div className="bg-red-600 text-white text-center py-2 px-4 text-sm font-semibold tracking-wide shadow-md z-50 relative">
         <span className="inline-block animate-pulse mr-2">⚠️</span>
-        ATENÇÃO: Material de circulação restrita. Disponibilidade limitadíssima para manter a exclusividade das estratégias.
+        ATENÇÃO: Material de circulação restrita. Disponibilidade limitada para manter a exclusividade das estratégias.
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white pt-16 pb-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900"></div>
-        
+      <header className="bg-slate-950 text-white pt-12 pb-24 px-4 relative overflow-hidden border-b-4 border-amber-500">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500 via-slate-900 to-slate-950"></div>
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center text-left">
-            <div className="flex flex-col">
-              <div className="inline-flex items-center self-start gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-400 font-medium text-sm mb-6 border border-amber-500/20">
-                <Gavel className="w-4 h-4" />
-                Kit Estratégico de Preparação
+          
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center md:text-left flex flex-col justify-center">
+              <div className="mb-6 inline-flex items-center gap-2 bg-amber-500/20 text-amber-400 px-4 py-1.5 rounded-full text-sm font-semibold border border-amber-500/30 w-fit mx-auto md:mx-0">
+                <ShieldCheck className="w-4 h-4" />
+                10 Passos de Preparação
               </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
-                A audiência de guarda pode ser um dos <span className="text-amber-500">momentos mais importantes</span> da sua vida como pai ou mãe.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white drop-shadow-md">
+                A audiência de guarda pode ser um dos <span className="text-amber-500 relative whitespace-nowrap">
+                  momentos mais importantes
+                  <svg className="absolute -bottom-2 left-0 w-full h-3 text-amber-500 opacity-70" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent" />
+                  </svg>
+                </span> da sua vida como pai ou mãe.
               </h1>
               
               {/* Mockup - Mobile Only */}
               <div className="md:hidden relative w-full mt-8 mb-12">
                 <div className="w-full h-80 sm:h-96 flex flex-col items-center justify-center relative overflow-visible">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
+                  <img src="/mockup-plano-completo.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
                 </div>
               </div>
 
-              <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
-                Siga o Kit Estratégico de Preparação, um método organizado em 10 passos simples, sem linguagem jurídica complicada, para preparar seu caso com mais segurança, organizar tudo o que realmente importa e chegar à audiência com a tranquilidade de quem fez o melhor que podia pelo seu filho.
+              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed font-medium">
+                Saber exatamente o que falar, quais perguntas o juiz pode fazer e como organizar suas provas pode ser a diferença entre um acordo favorável e um resultado desastroso.
               </p>
-
-              <a href="#oferta" className="inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-6 rounded-full shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center border-b-4 border-green-700 active:border-b-0 active:translate-y-1 whitespace-nowrap">
-                QUERO ADQUIRIR O MEU
-                <ArrowRight className="w-5 h-5 flex-shrink-0" />
-              </a>
               
-              <div className="mt-8 flex flex-wrap items-center justify-start gap-4 text-sm text-gray-400">
-                <div className="flex items-center gap-1"><ShieldCheck className="w-4 h-4 text-green-400"/> Compra 100% Segura</div>
-                <div className="flex items-center gap-1"><Lock className="w-4 h-4 text-green-400"/> Acesso Imediato</div>
+              <div className="flex flex-col gap-4 max-w-md mx-auto md:mx-0 mt-4 md:mt-0">
+                <a href="#oferta" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-6 rounded-full shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] transition-all duration-300 hover:scale-105 border-b-4 border-green-700 active:border-b-0 active:translate-y-1">
+                  QUERO ME PREPARAR
+                  <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                </a>
               </div>
             </div>
 
             {/* Mockup - Desktop Only */}
             <div className="hidden md:block relative mt-12 md:mt-0 w-full">
               <div className="w-full h-[550px] flex flex-col items-center justify-center relative overflow-visible">
-                <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
+                <img src="/mockup-plano-completo.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Common Enemy Section */}
-      <section className="py-20 px-4 bg-slate-900 text-white border-b border-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-red-500 tracking-tight">O sistema NÃO está do seu lado. E a outra parte sabe disso.</h2>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-            A verdade que advogados não te contam abertamente é que a Justiça de Família é sobrecarregada, fria e, muitas vezes, tendenciosa. O juiz não tem tempo para analisar quem ama mais a criança. Ele analisa provas, postura e frieza emocional.
-          </p>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            Enquanto você tenta jogar limpo, a outra parte pode estar usando táticas manipulativas, plantando provas distorcidas e criando uma narrativa onde você é o vilão. <strong className="text-amber-400 font-bold">Você está lutando com o coração, enquanto eles estão lutando com estratégia.</strong> É hora de nivelar o jogo.
-          </p>
-        </div>
-      </section>
-
-      {/* Pain Section */}
-      <section className="py-20 px-4 bg-white relative overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-900 tracking-tight">
-            A audiência dura algumas horas. <span className="text-red-600">As consequências duram uma vida.</span>
-          </h2>
-          
-          <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 text-left shadow-lg relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-red-100 rounded-bl-full -z-10 opacity-50"></div>
-            <AlertTriangle className="w-12 h-12 text-red-500 mb-6" />
-            
-            <p className="text-lg text-slate-700 leading-relaxed mb-6">
-              Quando a audiência é marcada, muita gente acredita que o maior problema é enfrentar o juiz. Mas o maior medo aparece quando você pensa no que realmente está em jogo:
-            </p>
-            
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">?</span>
-                </div>
-                <p className="text-slate-700 font-medium">E se, por falta de organização, eu deixar de apresentar uma informação vital?</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">?</span>
-                </div>
-                <p className="text-slate-700 font-medium">E se eu esquecer um documento que poderia ajudar meu advogado?</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-red-600 font-bold text-sm">?</span>
-                </div>
-                <p className="text-slate-700 font-medium">E se eu chegar despreparado no momento em que mais preciso demonstrar responsabilidade?</p>
-              </li>
-            </ul>
-
-            <div className="bg-slate-900 text-white p-6 rounded-2xl">
-              <p className="font-medium leading-relaxed">
-                Ninguém está preocupado apenas com uma audiência. O que pesa no coração é <strong className="text-amber-400">imaginar a possibilidade de ver o próprio filho crescer mais distante.</strong> Pensar que aniversários, datas especiais e o convívio diário nunca mais voltarão. O tempo com um filho não pode ser recuperado. É por isso que tanta gente se arrepende da preparação que deixou de fazer.
-              </p>
+      {/* Problem Agitation Section */}
+      <section className="py-20 px-4 bg-white relative">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-red-50 border-l-4 border-red-500 p-6 md:p-10 rounded-r-2xl shadow-sm mb-16 relative overflow-hidden">
+            <AlertTriangle className="absolute -right-4 -top-4 w-32 h-32 text-red-100/50" />
+            <h2 className="text-2xl md:text-3xl font-bold text-red-900 mb-6 relative z-10">O nervosismo e a falta de organização podem colocar tudo a perder.</h2>
+            <div className="space-y-4 text-red-800 text-base md:text-lg relative z-10">
+              <p>Muitos pais e mães chegam à audiência apenas com a orientação técnica do advogado, mas sem saberem como <strong className="font-bold">eles próprios</strong> devem se comportar, o que esperar e como estruturar os fatos da sua história.</p>
+              <p>O resultado? Esquecem detalhes cruciais na frente do juiz, respondem de forma insegura a perguntas inesperadas e deixam a outra parte dominar a narrativa.</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Cost of Inaction Section */}
-      <section className="py-20 px-4 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 leading-tight text-center">Você não pode controlar o processo todo. <span className="text-amber-600">Mas pode controlar seu preparo.</span></h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <ul className="space-y-8">
-                <li className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mt-1">
-                    <ShieldCheck className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Transforme ansiedade em ação</h4>
-                    <p className="text-slate-600 leading-relaxed">Em vez de enfrentar esse momento no improviso, você terá um método claro para organizar documentos e estruturar fatos.</p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mt-1">
-                    <Scale className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">Decisões Judiciais Irreversíveis</h4>
-                    <p className="text-slate-600 leading-relaxed">Uma vez que a guarda é estabelecida desfavoravelmente, reverter a decisão leva anos de processos dolorosos. Prepare-se hoje.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-amber-50 p-10 rounded-3xl border border-amber-200 shadow-xl relative text-center">
-              <BookOpen className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-              <p className="text-xl font-bold text-slate-900 leading-relaxed relative z-10 mb-6">
-                O Kit Estratégico foi criado justamente para você chegar à audiência sabendo que fez tudo o que podia da melhor maneira possível.
-              </p>
-              <a href="#oferta" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-6 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] border-b-4 border-green-700 active:border-b-0 active:translate-y-1 hover:scale-105 whitespace-nowrap">
-                QUERO ADQUIRIR O MEU
-                <ArrowRight className="w-5 h-5 flex-shrink-0" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Breakdown */}
-      <section className="py-20 px-4 bg-white border-y border-slate-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Tudo o que você precisa em um único Kit Estratégico.</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
-              Você não precisa passar horas pesquisando na internet ou tentando descobrir sozinho o que fazer. Reunimos, de forma prática e organizada, as ferramentas para facilitar sua preparação.
-            </p>
-            <Suspense fallback={<div className="h-[600px] w-full flex items-center justify-center bg-slate-100 rounded-2xl animate-pulse"><div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-              <AutoCarousel />
-            </Suspense>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200">
-              <BookOpen className="w-8 h-8 text-amber-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Guia Principal</h3>
-              <p className="text-sm text-slate-600">Manual completo que explica como funciona a preparação, as etapas do processo e como evitar erros comuns.</p>
-            </div>
-            
-            <div className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200">
-              <List className="w-8 h-8 text-amber-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Checklists Práticos</h3>
-              <p className="text-sm text-slate-600">Listas exatas de preparação e organização de documentos para evitar qualquer esquecimento no dia D.</p>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200">
-              <Calendar className="w-8 h-8 text-amber-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Cronogramas</h3>
-              <p className="text-sm text-slate-600">Planejamento simples para organizar cada etapa e montar a linha do tempo cronológica do seu caso.</p>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200">
-              <HelpCircle className="w-8 h-8 text-amber-500 mb-4" />
-              <h3 className="text-lg font-bold mb-2">Guias e Perguntas</h3>
-              <p className="text-sm text-slate-600">O que perguntar ao seu advogado e material de revisão rápida para consultar pouco antes da audiência.</p>
-            </div>
+          <div className="text-center">
+            <h3 className="text-3xl font-bold text-slate-900 mb-6">A preparação faz a diferença.</h3>
+            <p className="text-xl text-slate-600 mb-10">É por isso que o <strong>Kit Estratégico para Audiência de Guarda</strong> foi criado.</p>
+            <a href="#oferta" className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full transition-all">
+              Garantir Meu Kit Agora
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-4 bg-slate-900 text-white">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 px-4 bg-slate-900 text-white relative border-t-4 border-amber-500">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Muito mais que um material: Clareza e Confiança</h2>
-            <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
-            <p className="text-gray-400 max-w-2xl mx-auto mt-6">A maior ansiedade vem da sensação de não saber se você está preparado. O Kit transforma essa insegurança em um plano claro de ação.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Tudo o que você precisa em um único Kit Estratégico.</h2>
+            <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-10">
+              Você não precisa passar horas pesquisando na internet ou tentando descobrir sozinho o que fazer. Reunimos, de forma prática e organizada, as ferramentas para facilitar sua preparação.
+            </p>
+            <Suspense fallback={<div className="h-[600px] w-full flex items-center justify-center bg-slate-800 rounded-2xl animate-pulse"><div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div></div>}>
+              <AutoCarousel />
+            </Suspense>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex items-start gap-4">
-              <CheckCircle2 className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="text-xl font-bold text-white mb-2">Organize seu caso com facilidade</h4>
-                <p className="text-gray-400">Reúna documentos, registros e informações de forma estruturada, evitando deixar detalhes relevantes de fora.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-amber-500/50 transition-colors">
+              <div className="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl flex items-center justify-center mb-4">
+                <BookOpen className="w-6 h-6" />
               </div>
+              <h4 className="font-bold text-lg mb-2 text-white">Método Direto ao Ponto</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">Sem teorias complexas. Um passo a passo claro sobre o que fazer e como se organizar antes da audiência.</p>
             </div>
             
-            <div className="flex items-start gap-4">
-              <CheckCircle2 className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="text-xl font-bold text-white mb-2">Colabore eficientemente com seu advogado</h4>
-                <p className="text-gray-400">Chegue às reuniões com a cronologia dos acontecimentos e dúvidas bem definidas, tornando a comunicação muito produtiva.</p>
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-amber-500/50 transition-colors">
+              <div className="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl flex items-center justify-center mb-4">
+                <List className="w-6 h-6" />
               </div>
+              <h4 className="font-bold text-lg mb-2 text-white">Organização Total</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">Checklists, cronogramas e modelos práticos para garantir que você não esqueça nenhum documento ou detalhe importante.</p>
             </div>
-
-            <div className="flex items-start gap-4">
-              <CheckCircle2 className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="text-xl font-bold text-white mb-2">Evite erros comprometedores</h4>
-                <p className="text-gray-400">Conheça comportamentos, descuidos e falhas de organização que costumam dificultar o caso e aprenda a evitá-los.</p>
+            
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-amber-500/50 transition-colors">
+              <div className="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl flex items-center justify-center mb-4">
+                <Target className="w-6 h-6" />
               </div>
+              <h4 className="font-bold text-lg mb-2 text-white">Foco na Prática</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">Listas de perguntas que os juízes costumam fazer e comportamentos que você deve evitar na frente deles.</p>
             </div>
-
-            <div className="flex items-start gap-4">
-              <CheckCircle2 className="w-6 h-6 text-amber-500 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="text-xl font-bold text-white mb-2">Reduza a ansiedade</h4>
-                <p className="text-gray-400">Quando existe um plano, a insegurança diminui. Você sabe o que precisa fazer e consegue enfrentar o momento com tranquilidade.</p>
+            
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-amber-500/50 transition-colors">
+              <div className="w-12 h-12 bg-amber-500/20 text-amber-500 rounded-xl flex items-center justify-center mb-4">
+                <Lock className="w-6 h-6" />
               </div>
+              <h4 className="font-bold text-lg mb-2 text-white">Mais Confiança</h4>
+              <p className="text-slate-400 text-sm leading-relaxed">Reduza a ansiedade através de uma preparação estruturada e saiba exatamente o que esperar no dia.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mid CTA Urgency */}
-      <section className="py-16 px-4 bg-amber-500 text-slate-900 text-center">
+      {/* Modules Section */}
+      <section className="py-24 px-4 bg-slate-50 relative">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight">Sua audiência vai acontecer, esteja você preparado(a) ou não.</h2>
-          <p className="text-lg font-medium mb-8 max-w-2xl mx-auto">
-            Cada dia que passa é um dia a menos para organizar documentos, revisar informações e conversar com seu advogado de forma estruturada. Não espere a ansiedade dominar. Comece hoje.
-          </p>
-          <a href="#oferta" className="inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-6 rounded-full shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] transition-all duration-300 hover:scale-105 border-b-4 border-green-700 active:border-b-0 active:translate-y-1 whitespace-nowrap w-full sm:w-auto">
-            QUERO ADQUIRIR O MEU
-            <ArrowRight className="w-5 h-5 flex-shrink-0" />
-          </a>
-        </div>
-      </section>
-
-      {/* Target Audience */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">O Kit Estratégico é ideal para você que...</h2>
-          
-          <div className="space-y-4">
-            {[
-              "Quer chegar à audiência sabendo exatamente como se preparar, com um roteiro claro e sem insegurança.",
-              "Deseja colaborar de forma mais organizada e produtiva com seu advogado.",
-              "Tem medo de esquecer algum documento importante no dia da audiência e quer revisar cada detalhe.",
-              "Nunca participou de uma audiência de guarda e quer entender, de forma simples, o que esperar do processo.",
-              "Quer reduzir a ansiedade causada pela falta de organização e evitar improvisos arriscados.",
-              "Deseja fazer tudo o que estiver ao seu alcance para proteger os interesses do seu filho de forma responsável."
-            ].map((item, index) => (
-              <div key={index} className="bg-slate-50 p-6 rounded-xl flex items-center gap-4 border border-slate-200">
-                <Target className="w-8 h-8 text-amber-500 flex-shrink-0" />
-                <p className="text-lg font-medium text-slate-700">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modules */}
-      <section className="py-20 px-4 bg-slate-100 border-t border-slate-200">
-        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-amber-600 font-bold tracking-wider uppercase text-sm mb-2 block">O Produto Principal</span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">O que você vai encontrar nos 10 Passos</h2>
-            <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full mb-8"></div>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">O material central do treinamento é um kit estratégico em 10 passos em linguagem simples, super fácil de entender e executar, sem complicações jurídicas.</p>
+            <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
             {[
-              { t: "Entendendo a Guarda dos Filhos", d: "Conceitos fundamentais e modelos de guarda de forma simples e direta." },
-              { t: "Preparação Emocional", d: "Estratégias vitais para controlar a ansiedade e manter uma postura equilibrada." },
-              { t: "Como se Preparar para a Audiência", d: "Aprenda a organizar informações, documentos e registros cruciais." },
-              { t: "Lidando com a Outra Parte", d: "Atitudes para evitar conflitos desnecessários e preservar uma postura adequada." },
-              { t: "Como os Casos São Analisados", d: "Os critérios normalmente considerados pelo juiz durante a análise da disputa." },
-              { t: "Organização Estratégica do Caso", d: "Uma forma prática de estruturar fatos para facilitar a comunicação com o advogado." },
-              { t: "Erros que Devem Ser Evitados", d: "Os comportamentos e falhas de preparação que podem gerar dificuldades no processo." },
-              { t: "Comunicação com seu Advogado", d: "Saiba como reunir informações relevantes e fazer as perguntas certas nas reuniões." },
-              { t: "Bem-Estar dos Filhos Durante o Processo", d: "Boas práticas para proteger emocionalmente as crianças enquanto a disputa acontece." },
-              { t: "Depois da Audiência", d: "Como manter sua organização após a decisão e os cuidados que continuam importantes." }
-            ].map((module, index) => (
-              <div key={index} className="flex gap-4 p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
+              { t: "Entendendo os Tipos de Guarda e o Papel do Juiz", d: "Conceitos iniciais fundamentais para alinhar suas expectativas antes mesmo de pisar na sala." },
+              { t: "Os Principais Erros", d: "Comportamentos comuns que os pais cometem na hora do nervosismo e que podem destruir toda a estratégia." },
+              { t: "A Estrutura da Audiência", d: "Como funciona, quem participa e a ordem exata dos acontecimentos no dia." },
+              { t: "Coleta e Triagem de Provas Fortes", d: "Como organizar prints, áudios, vídeos e documentos de forma que realmente gerem impacto." },
+              { t: "A Preparação Emocional e Comportamental", d: "Técnicas práticas para manter o controle, não cair em provocações e passar credibilidade." }
+            ].map((module, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-5 items-start hover:shadow-md transition-shadow">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-lg">
-                  {index + 1}
+                  {idx + 1}
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">{module.t}</h4>
-                  <p className="text-sm text-slate-600">{module.d}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{module.d}</p>
                 </div>
               </div>
             ))}
+            <div className="text-center mt-6">
+              <span className="text-slate-500 font-medium italic">E mais 5 passos complementares focados em pós-audiência e dinâmicas de acordo.</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 9 Bonuses Section */}
-      <section className="py-20 px-4 bg-slate-900 text-white">
-        <div className="max-w-6xl mx-auto">
+      {/* Bonus Section */}
+      <section className="py-24 px-4 bg-slate-900 relative border-t-4 border-amber-500 overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-amber-400 font-bold tracking-wider uppercase text-sm mb-2 block">O Arsenal Completo</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">9 Bônus Exclusivos Inclusos no Pacote VIP</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Ferramentas práticas desenvolvidas para economizar seu tempo, estruturar perfeitamente seu caso e te colocar anos-luz à frente na preparação.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">9 Bônus Exclusivos Inclusos no Pacote VIP</h2>
+            <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-gray-400 max-w-2xl mx-auto">Ferramentas práticas de aplicação imediata projetadas para economizar seu tempo e acelerar sua organização.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
-              { n: 1, t: "Checklist Completo de Preparação", d: "Tenha uma lista prática com os principais pontos que devem ser revisados antes da audiência. Reduz drasticamente a chance de esquecer etapas importantes.", img: "https://i.postimg.cc/d1SN8hgq/Bonus-01-Mockup-Photoroom.webp" },
-              { n: 2, t: "Direitos e Deveres dos Pais", d: "Guia objetivo com os principais direitos e responsabilidades relacionados à guarda dos filhos, facilitando a compreensão dos aspectos cruciais do processo.", img: "https://i.postimg.cc/qRZD8NWJ/Bonus-02-Mockup-Photoroom.webp" },
-              { n: 3, t: "Perguntas que o Juiz Pode Fazer", d: "Conheça exemplos de perguntas frequentemente realizadas em audiências de guarda e utilize esse material para se preparar com mais confiança e naturalidade.", img: "https://i.postimg.cc/V6HZjJ2s/Bonus-03-Mockup-Photoroom.webp" },
-              { n: 4, t: "Checklist de Documentos", d: "Organize seus documentos de maneira simples e lógica para análise junto ao seu advogado.", img: "https://i.postimg.cc/Y9yD1vTq/Bonus-04-Mockup-Photoroom.webp" },
-              { n: 5, t: "Cronograma de Preparação", d: "Um plano organizado para distribuir sua preparação e evitar deixar tudo para a última hora.", img: "https://i.postimg.cc/V6HZjJ2N/Bonus-05-Mockup-Photoroom.webp" },
-              { n: 6, t: "Workbook de Organização", d: "Material preenchível para estruturar seu caso e registrar acontecimentos importantes.", img: "https://i.postimg.cc/26X941g6/Bonus-06-Mockup-Photoroom.webp" },
+              { n: 1, t: "Checklist Completo de Preparação", d: "Lista prática com os principais pontos que devem ser revisados. Reduz drasticamente a chance de esquecer etapas.", img: "https://i.postimg.cc/d1SN8hgq/Bonus-01-Mockup-Photoroom.webp" },
+              { n: 2, t: "Direitos e Deveres dos Pais", d: "Guia objetivo com responsabilidades relacionadas à guarda, facilitando a compreensão do processo.", img: "https://i.postimg.cc/qRZD8NWJ/Bonus-02-Mockup-Photoroom.webp" },
+              { n: 3, t: "Perguntas que o Juiz Pode Fazer", d: "Conheça exemplos de perguntas frequentes para você chegar com as ideias mais claras.", img: "https://i.postimg.cc/V6HZjJ2s/Bonus-03-Mockup-Photoroom.webp" },
+              { n: 4, t: "Checklist de Documentos", d: "Organize todos os papéis de maneira simples e lógica para levar ao seu advogado.", img: "https://i.postimg.cc/Y9yD1vTq/Bonus-04-Mockup-Photoroom.webp" },
+              { n: 5, t: "Cronograma de Preparação", d: "Plano organizado para distribuir suas tarefas e evitar deixar tudo para a última hora.", img: "https://i.postimg.cc/V6HZjJ2N/Bonus-05-Mockup-Photoroom.webp" },
+              { n: 6, t: "Workbook de Organização", d: "Material preenchível para estruturar seu caso e anotar acontecimentos importantes.", img: "https://i.postimg.cc/26X941g6/Bonus-06-Mockup-Photoroom.webp" },
               { n: 7, t: "Modelo de Cronologia", d: "Organize os fatos cronologicamente, facilitando as consultas e conversas legais.", img: "https://i.postimg.cc/vBS2W4CD/Bonus-07-Mockup-Photoroom.webp" },
               { n: 8, t: "Lista de Perguntas", d: "Relação estratégica de perguntas vitais para você fazer ao seu advogado nas reuniões.", img: "https://i.postimg.cc/RFbpcW2N/Bonus-08-Mockup-Photoroom.webp" },
               { n: 9, t: "Guia de Revisão Final", d: "Roteiro super rápido para revisar os principais pontos da sua preparação pouco antes da audiência.", img: "https://i.postimg.cc/qRZD8NWn/Bonus-09-Mockup-Photoroom.webp" }
@@ -384,6 +233,7 @@ export default function App() {
       <section className="py-24 px-4 bg-slate-950 text-white border-y border-slate-800">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Quem sou eu e por que escondo meu rosto?</h2>
+          
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-40 h-40 md:w-56 md:h-56 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden relative border-4 border-amber-500">
               <div className="absolute inset-0 flex items-center justify-center bg-slate-950">
@@ -453,7 +303,6 @@ export default function App() {
             <a href="#" className="hover:text-amber-500 transition-colors">Política de Privacidade</a>
             <a href="#" className="hover:text-amber-500 transition-colors">Contato</a>
           </div>
-
           <p className="text-xs mb-2">Todos os direitos sobre a obra "Kit Estratégico para Audiência de Guarda" são reservados nos termos da Lei nº 9.610/98.</p>
           <p className="text-xs opacity-50">Este site não faz parte do site do Facebook ou da Meta Platforms, Inc. Além disso, este site não é endossado pelo Facebook de nenhuma maneira.</p>
         </div>
