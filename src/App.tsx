@@ -1,5 +1,6 @@
 
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
+const MockupPlanoCompleto = "https://i.postimg.cc/wB7w85d6/Mockup-Plano-Completo-400-400-photopea.webp";
 import { 
   ShieldCheck, 
   Scale, 
@@ -18,9 +19,9 @@ import {
   Target
 } from 'lucide-react';
 
-const AutoCarousel = lazy(() => import("./components/AutoCarousel"));
-const OfferSection = lazy(() => import("./components/OfferSection"));
-const FAQSection = lazy(() => import("./components/FAQSection"));
+import AutoCarousel from "./components/AutoCarousel";
+import OfferSection from "./components/OfferSection";
+import FAQSection from "./components/FAQSection";
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-amber-500 selection:text-white">
@@ -51,7 +52,7 @@ export default function App() {
               {/* Mockup - Mobile Only */}
               <div className="md:hidden relative w-full mt-8 mb-12">
                 <div className="w-full h-80 sm:h-96 flex flex-col items-center justify-center relative overflow-visible">
-                  <img src="./mockup-mobile.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
+                  <img src={MockupPlanoCompleto} fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
                 </div>
               </div>
 
@@ -73,7 +74,7 @@ export default function App() {
             {/* Mockup - Desktop Only */}
             <div className="hidden md:block relative mt-12 md:mt-0 w-full">
               <div className="w-full h-[550px] flex flex-col items-center justify-center relative overflow-visible">
-                <img src="./mockup-desktop.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
+                <img src={MockupPlanoCompleto} fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
               </div>
             </div>
           </div>
@@ -188,9 +189,7 @@ export default function App() {
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-10">
               Você não precisa passar horas pesquisando na internet ou tentando descobrir sozinho o que fazer. Reunimos, de forma prática e organizada, as ferramentas para facilitar sua preparação.
             </p>
-            <Suspense fallback={<div className="h-[600px] w-full flex items-center justify-center bg-slate-100 rounded-2xl animate-pulse"><div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-              <AutoCarousel />
-            </Suspense>
+            <AutoCarousel />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -407,14 +406,10 @@ export default function App() {
       </section>
 
       {/* Offer Section */}
-      <Suspense fallback={<div className="py-24 px-4 bg-slate-50 min-h-[600px] flex items-center justify-center"><div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-        <OfferSection />
-      </Suspense>
+      <OfferSection />
 
       {/* FAQ Section */}
-      <Suspense fallback={<div className="py-20 px-4 bg-slate-900 text-white min-h-[400px] flex items-center justify-center"><div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-        <FAQSection />
-      </Suspense>
+      <FAQSection />
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-16 px-4 text-center text-sm border-t border-slate-900">
