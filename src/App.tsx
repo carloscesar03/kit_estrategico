@@ -51,7 +51,7 @@ export default function App() {
               {/* Mockup - Mobile Only */}
               <div className="md:hidden relative w-full mt-8 mb-12">
                 <div className="w-full h-80 sm:h-96 flex flex-col items-center justify-center relative overflow-visible">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
+                  <img src="./mockup-mobile.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
                 </div>
               </div>
 
@@ -73,7 +73,7 @@ export default function App() {
             {/* Mockup - Desktop Only */}
             <div className="hidden md:block relative mt-12 md:mt-0 w-full">
               <div className="w-full h-[550px] flex flex-col items-center justify-center relative overflow-visible">
-                <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
+                <img src="./mockup-desktop.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
               </div>
             </div>
           </div>
