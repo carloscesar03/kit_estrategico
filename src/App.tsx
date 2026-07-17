@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-const MockupPlanoCompleto = "/mockup-plano-completo.webp";
+const MockupPlanoCompleto = "/Mockup%20Plano%20Completo-400-400-photopea.webp";
 import { 
   ShieldCheck, 
   Scale, 
