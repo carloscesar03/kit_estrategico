@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-const MockupPlanoCompleto = "https://i.postimg.cc/wB7w85d6/Mockup-Plano-Completo-400-400-photopea.webp";
+const MockupPlanoCompleto = "/mockup-plano-completo.webp";
 import { 
   ShieldCheck, 
   Scale, 
@@ -34,7 +34,6 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white pt-16 pb-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900"></div>
         
         <div className="max-w-6xl mx-auto relative z-10">
