@@ -532,10 +532,10 @@ export default function App() {
                   </li>
                 </ul>
 
-                <button className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-4 rounded-full transition-all duration-300 hover:scale-105 shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] border-b-4 border-green-700 active:border-b-0 active:translate-y-1 mb-2 whitespace-nowrap">
+                <a href="https://pay.wiapy.com/MZOsRMejshN" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-4 rounded-full transition-all duration-300 hover:scale-105 shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] border-b-4 border-green-700 active:border-b-0 active:translate-y-1 mb-2 whitespace-nowrap">
                   QUERO ADQUIRIR O MEU
                   <ArrowRight className="w-5 h-5 flex-shrink-0" />
-                </button>
+                </a>
                 <div className="text-center text-sm text-red-600 mt-3 leading-tight">
                   <span className="font-bold">ATENÇÃO:</span> Temos uma oferta <span className="underline font-semibold">ainda mais VANTAJOSA</span><br className="hidden md:block"/> para você! Veja logo abaixo
                 </div>
@@ -626,10 +626,10 @@ export default function App() {
                   </li>
                 </ul>
 
-                <button className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-4 rounded-full shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] transition-all duration-300 hover:scale-105 border-b-4 border-green-700 active:border-b-0 active:translate-y-1 mb-4 whitespace-nowrap">
+                <a href="https://pay.wiapy.com/wd5piZIRY-ak" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-4 rounded-full shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] transition-all duration-300 hover:scale-105 border-b-4 border-green-700 active:border-b-0 active:translate-y-1 mb-4 whitespace-nowrap">
                   QUERO ADQUIRIR O MEU
                   <ArrowRight className="w-5 h-5 flex-shrink-0" />
-                </button>
+                </a>
               </div>
             </div>
             
