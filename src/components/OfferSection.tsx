@@ -1,6 +1,6 @@
 
 import { ArrowRight, ShieldCheck, CheckCircle2, Star } from "lucide-react";
-const MockupPlanoCompleto = "https://i.postimg.cc/wB7w85d6/Mockup-Plano-Completo-400-400-photopea.webp";
+const MockupPlanoCompleto = "/mockup-plano-completo.webp";
 
 export default function OfferSection() {
   return (
@@ -167,7 +167,7 @@ export default function OfferSection() {
           {/* Guarantee Block inside Offer Section */}
           <div className="mt-16 bg-white border border-slate-200 rounded-3xl p-8 max-w-4xl mx-auto flex flex-col items-center gap-6 shadow-md text-center">
             <div className="flex-shrink-0 relative">
-              <img src="https://i.postimg.cc/4yHMdVXn/7dias-garantia-300x300.png" alt="Garantia de 7 dias" className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-xl" />
+              <img src="/7dias-garantia.png" alt="Garantia de 7 dias" className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-xl" loading="lazy" />
             </div>
             <div>
               <h4 className="text-2xl font-bold text-slate-900 mb-3">Sua compra é protegida pela Garantia de 7 Dias.</h4>
