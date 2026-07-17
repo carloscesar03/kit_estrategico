@@ -1,6 +1,6 @@
 
 import { ArrowRight, ShieldCheck, CheckCircle2, Star } from "lucide-react";
-const MockupPlanoCompleto = "/mockup-plano-completo.webp";
+const MockupPlanoCompleto = "/Mockup%20Plano%20Completo-400-400-photopea.webp";
 
 export default function OfferSection() {
   return (
