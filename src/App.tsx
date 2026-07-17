@@ -62,7 +62,7 @@ function AutoCarousel() {
   return (
     <div className="w-[calc(100%+2rem)] -mx-4 md:w-full md:max-w-4xl md:mx-auto overflow-hidden md:rounded-2xl relative md:shadow-lg bg-white/50">
       <div 
-        className="flex transition-transform duration-700 ease-in-out"
+        className="flex transition-transform duration-700 ease-in-out will-change-transform"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((img, idx) => (
@@ -70,6 +70,7 @@ function AutoCarousel() {
             <img 
               src={img} 
               alt={`Exemplo do Kit ${idx + 1}`} 
+              loading="lazy"
               className="w-full h-auto object-contain max-h-[70vh] md:max-h-[600px]" 
             />
           </div>
@@ -123,7 +124,7 @@ export default function App() {
               {/* Mockup - Mobile Only */}
               <div className="md:hidden relative w-full mt-8 mb-12">
                 <div className="w-full h-80 sm:h-96 flex flex-col items-center justify-center relative overflow-visible">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
+                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
                 </div>
               </div>
 
@@ -145,7 +146,7 @@ export default function App() {
             {/* Mockup - Desktop Only */}
             <div className="hidden md:block relative mt-12 md:mt-0 w-full">
               <div className="w-full h-[550px] flex flex-col items-center justify-center relative overflow-visible">
-                <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
+                <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
               </div>
             </div>
           </div>
@@ -436,7 +437,7 @@ export default function App() {
                 <div className="w-full h-40 sm:h-48 bg-gradient-to-br from-slate-900/80 to-slate-950/80 rounded-xl mb-10 flex items-center justify-center border border-slate-700/50 shadow-[inset_0_2px_10px_rgba(0,0,0,0.4)] relative">
                   <div className="absolute inset-0 bg-amber-500/5 blur-3xl rounded-full"></div>
                   {bonus.img ? (
-                    <img src={bonus.img} alt={bonus.t} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] max-w-none object-contain z-10 drop-shadow-2xl" />
+                    <img src={bonus.img} loading="lazy" alt={bonus.t} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] max-w-none object-contain z-10 drop-shadow-2xl" />
                   ) : (
                     <span className="text-slate-500 text-sm font-medium">Espaço para Mockup</span>
                   )}
@@ -496,7 +497,7 @@ export default function App() {
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Básica */}
                 <div className="w-full h-80 md:h-64 my-6 flex items-center justify-center relative">
-                  <img src="https://i.postimg.cc/FKkgSfrn/Mockup-Plano-Basico-squoosh.webp" alt="Kit Estratégico Básico" className="w-full h-full object-contain relative z-10 scale-[1.15] md:scale-110" />
+                  <img src="https://i.postimg.cc/FKkgSfrn/Mockup-Plano-Basico-squoosh.webp" loading="lazy" alt="Kit Estratégico Básico" className="w-full h-full object-contain relative z-10 scale-[1.15] md:scale-110" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Apenas os 10 Passos</h3>
@@ -554,7 +555,7 @@ export default function App() {
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Completa (Produto + Bônus) */}
                 <div className="w-full h-[400px] sm:h-96 md:h-80 my-8 md:my-6 flex items-center justify-center relative">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.12] sm:scale-110 md:scale-110" />
+                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" loading="lazy" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.12] sm:scale-110 md:scale-110" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Kit Estratégico Completo</h3>
