@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 const MockupPlanoCompleto = "/Mockup%20Plano%20Completo-400-400-photopea.webp";
 import { 
   ShieldCheck, 
@@ -19,9 +19,9 @@ import {
   Target
 } from 'lucide-react';
 
-import AutoCarousel from "./components/AutoCarousel";
-import OfferSection from "./components/OfferSection";
-import FAQSection from "./components/FAQSection";
+const AutoCarousel = lazy(() => import("./components/AutoCarousel"));
+const OfferSection = lazy(() => import("./components/OfferSection"));
+const FAQSection = lazy(() => import("./components/FAQSection"));
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-amber-500 selection:text-white">
@@ -37,24 +37,26 @@ export default function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-900"></div>
         
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center text-left">
-            <div className="flex flex-col">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-center text-left">
+            <div className="flex flex-col md:col-start-1 md:row-start-1">
               <div className="inline-flex items-center self-start gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-400 font-medium text-sm mb-6 border border-amber-500/20">
                 <Gavel className="w-4 h-4" />
                 Kit Estratégico de Preparação
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
-                A audiência de guarda pode ser um dos <span className="text-amber-500">momentos mais importantes</span> da sua vida como pai ou mãe.
+                Antes da audiência de guarda, siga estes <span className="text-amber-500">10 passos</span> que todo pai e toda mãe deveriam conhecer.
               </h1>
-              
-              {/* Mockup - Mobile Only */}
-              <div className="md:hidden relative w-full mt-8 mb-12">
-                <div className="w-full h-80 sm:h-96 flex flex-col items-center justify-center relative overflow-visible">
-                  <img src={MockupPlanoCompleto} fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15]" />
-                </div>
+            </div>
+            
+            {/* Mockup - Universal */}
+            <div className="relative w-full mt-2 mb-6 md:mt-0 md:col-start-2 md:row-start-1 md:row-span-2">
+              <div className="w-full h-80 sm:h-96 md:h-[550px] flex flex-col items-center justify-center relative overflow-visible">
+                <img src={MockupPlanoCompleto} fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl scale-[1.15] md:scale-100" />
               </div>
+            </div>
 
+            <div className="flex flex-col md:col-start-1 md:row-start-2">
               <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
                 Siga o Kit Estratégico de Preparação, um método organizado em 10 passos simples, sem linguagem jurídica complicada, para preparar seu caso com mais segurança, organizar tudo o que realmente importa e chegar à audiência com a tranquilidade de quem fez o melhor que podia pelo seu filho.
               </p>
@@ -70,12 +72,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Mockup - Desktop Only */}
-            <div className="hidden md:block relative mt-12 md:mt-0 w-full">
-              <div className="w-full h-[550px] flex flex-col items-center justify-center relative overflow-visible">
-                <img src={MockupPlanoCompleto} fetchPriority="high" alt="Kit Estratégico para Audiência de Guarda" className="w-full h-full object-contain relative z-10 filter drop-shadow-2xl" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -405,10 +401,14 @@ export default function App() {
       </section>
 
       {/* Offer Section */}
-      <OfferSection />
+      <Suspense fallback={<div className="h-96 flex items-center justify-center text-slate-400">Carregando ofertas...</div>}>
+        <OfferSection />
+      </Suspense>
 
       {/* FAQ Section */}
-      <FAQSection />
+      <Suspense fallback={<div className="h-96 flex items-center justify-center text-slate-400">Carregando perguntas...</div>}>
+        <FAQSection />
+      </Suspense>
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-16 px-4 text-center text-sm border-t border-slate-900">
