@@ -82,7 +82,7 @@ export default function OfferSection() {
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Completa (Produto + Bônus) */}
                 <div className="w-full h-[400px] sm:h-96 md:h-80 my-8 md:my-6 flex items-center justify-center relative">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" loading="lazy" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.12] sm:scale-110 md:scale-110" />
+                  <img src="./mockup-desktop.webp" loading="lazy" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.12] sm:scale-110 md:scale-110" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Kit Estratégico Completo</h3>
