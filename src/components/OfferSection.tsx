@@ -27,43 +27,39 @@ export default function OfferSection() {
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Apenas os 10 Passos</h3>
-                <p className="text-center text-slate-500 text-sm mb-6 pb-6 border-b border-slate-100">
-                  Ideal para quem precisa apenas dos passos fundamentais de forma rápida.
+                <p className="text-center text-slate-500 text-sm mb-6 pb-6 border-b border-slate-200">
+                  O guia prático principal de preparação.
                 </p>
                 
                 <div className="flex flex-col items-center justify-center mb-8">
-                  <span className="text-slate-400 line-through text-lg mb-1">De R$ 47,90</span>
                   <span className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Por apenas</span>
                   <div className="flex items-start text-slate-900 font-extrabold">
-                    <span className="text-2xl mt-2 mr-1">R$</span>
-                    <span className="text-6xl">17,90</span>
+                    <span className="text-xl mt-1.5 mr-1">R$</span>
+                    <span className="text-5xl">14,90</span>
                   </div>
+                  <span className="text-slate-400 text-xs mt-2 font-medium">Pagamento Único. Sem Mensalidades.</span>
                 </div>
 
                 <ul className="space-y-4 mb-8 flex-grow">
-                  <li className="flex items-start gap-3">
+                  <li className="flex items-start gap-3 opacity-90">
                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700">Kit Estratégico Completo (10 Passos)</span>
+                    <span className="text-slate-600 font-medium">Kit Estratégico para Audiência (10 Passos)</span>
                   </li>
-                  <li className="flex items-start gap-3">
+                  <li className="flex items-start gap-3 opacity-90">
                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700">Acesso Imediato</span>
+                    <span className="text-slate-600 font-medium">Acesso Imediato</span>
                   </li>
-                  <li className="flex items-start gap-3">
+                  <li className="flex items-start gap-3 opacity-90">
                     <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700">Acesso Vitalício</span>
-                  </li>
-                  <li className="flex items-start gap-3 opacity-40">
-                    <div className="w-5 h-5 rounded-full border border-slate-300 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-500 line-through">Sem os 9 Bônus Exclusivos de Preparação</span>
+                    <span className="text-slate-600 font-medium">Garantia de 7 Dias</span>
                   </li>
                 </ul>
 
                 <a href="https://pay.wiapy.com/MZOsRMejshN" className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-b from-green-400 to-green-600 hover:from-green-300 hover:to-green-500 text-white text-base md:text-lg font-bold py-3 md:py-4 px-4 rounded-full transition-all duration-300 hover:scale-105 shadow-[0_8px_30px_rgba(22,163,74,0.4)] hover:shadow-[0_8px_40px_rgba(22,163,74,0.6)] border-b-4 border-green-700 active:border-b-0 active:translate-y-1 mb-2 whitespace-nowrap">
-                  QUERO ADQUIRIR O MEU
+                  QUERO O BÁSICO
                   <ArrowRight className="w-5 h-5 flex-shrink-0" />
                 </a>
-                <div className="text-center text-sm text-red-600 mt-3 leading-tight">
+                <div className="text-center text-xs text-red-500 font-medium mt-3 pb-2 animate-pulse">
                   <span className="font-bold">ATENÇÃO:</span> Temos uma oferta <span className="underline font-semibold">ainda mais VANTAJOSA</span><br className="hidden md:block"/> para você! Veja logo abaixo
                 </div>
               </div>
@@ -81,7 +77,7 @@ export default function OfferSection() {
               <div className="p-5 md:p-8 flex flex-col flex-grow">
                 {/* Mockup da Oferta Completa (Produto + Bônus) */}
                 <div className="w-full h-[400px] sm:h-96 md:h-80 my-8 md:my-6 flex items-center justify-center relative">
-                  <img src="https://i.postimg.cc/hGQbmJD6/Mockup-Plano-Completo-squoosh.webp" loading="lazy" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.12] sm:scale-110 md:scale-110" />
+                  <img src="/mockup-plano-completo.webp" loading="lazy" alt="Pacote VIP Completo" className="w-full h-full object-contain relative z-10 filter drop-shadow-xl scale-[1.12] sm:scale-110 md:scale-110" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">Kit Estratégico Completo</h3>
@@ -180,6 +176,6 @@ export default function OfferSection() {
           </div>
         </div>
       </section>
--e     </>
+    </>
   );
 }
